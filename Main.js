@@ -1,11 +1,22 @@
 // const div = document.createElement("div");
 // div.className = "flex-container";
+
+class Canvas {
+    constructor(array) {
+        this.nums = [];
+    }
+
+    // Methods
+    _createBlocksForSorting(){
+
+    }
+}
 const div = document.querySelectorAll(".flex-container")[0];
 const sortButton = document.getElementById("btn");
 
 console.log(sortButton);
 
-let array = [37,54,62,23,67,11,23,45,99,5];
+let array = [65,39,89,37,54,62,23,67,11,23,45,99,5,8,10,20,21,87,65,10];
 
 // function putArrayOnPage(inputArr) {
     // Loop through the array and create bars for each number.
@@ -15,7 +26,7 @@ let array = [37,54,62,23,67,11,23,45,99,5];
 
         blockDivs.className = "block" + i;
 
-        blockDivs.style.width = "50px";
+        blockDivs.style.width = "35px";
 
         blockDivs.style.height = (array[i] * 6) + "px"; 
         
@@ -29,7 +40,7 @@ let array = [37,54,62,23,67,11,23,45,99,5];
         blockDivs.appendChild(text);
         div.appendChild(blockDivs);
     }
-    document.body.appendChild(div);
+    // document.body.appendChild(div);
 // }
 
 console.log(div);
