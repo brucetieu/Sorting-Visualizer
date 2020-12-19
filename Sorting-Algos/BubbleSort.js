@@ -1,5 +1,4 @@
-// import { Canvas } from '../Main.js';
-// import { delay } from '../Delay.js';
+const BUBBLE = "bubble";
 
 async function bubbleSort(childnodes) {
     let size = childnodes.length;
@@ -24,8 +23,16 @@ async function bubbleSort(childnodes) {
                 let temp2 = childnodes[j].textContent;
                 childnodes[j].textContent = childnodes[j+1].textContent;
                 childnodes[j+1].textContent = temp2
+                
+                let slider = document.getElementById("customRange1");
+                
+                // let rangeValue = async function () {
+                //     let lag = slider.value;
+                //     await delay(lag);
+                // }
 
-                await delay(1000);
+                // slider.addEventListener("input", rangeValue);
+                await delay(slider.value);
 
                 childnodes[j].style.backgroundColor = "lightblue";
                 childnodes[j+1].style.backgroundColor = "lightblue";
@@ -46,16 +53,21 @@ async function bubbleSort(childnodes) {
     for (let i = 0; i < size; i++) {
         childnodes[i].style.backgroundColor = "lightblue";
     }
-    removeEventListener("click", bubbleSort);
+
+    sortButton.disabled = false;
 }
 
-// let canvas2 = new Canvas();
-
-// div = canvas.displayNumsOnCanvas();
-// console.log(canvas2.getDiv);
-
 const sortButton = document.getElementById("btn");
-// console.log(sortButton.textContent);
+const option = document.getElementById("sorting-ctrl");
+
+
 sortButton.addEventListener("click", function() {
-    bubbleSort(canvas.getDiv.childNodes);
-}, {once : true});
+
+    if (canvas.getDiv == null) return; 
+
+    if (option.value == BUBBLE) {
+        sortButton.disabled = true;
+        bubbleSort(canvas.getDiv.childNodes);
+    }
+
+});
