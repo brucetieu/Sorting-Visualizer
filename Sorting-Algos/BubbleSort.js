@@ -1,3 +1,6 @@
+// import { Canvas } from '../Main.js';
+// import { delay } from '../Delay.js';
+
 async function bubbleSort(childnodes) {
     let size = childnodes.length;
 
@@ -37,11 +40,22 @@ async function bubbleSort(childnodes) {
         // IF no two elements were  
         // swapped by inner loop, then break 
         if (swapped == false) {
-            div.childNodes[0].style.backgroundColor = "orange";
             break; 
         }
     }
     for (let i = 0; i < size; i++) {
         childnodes[i].style.backgroundColor = "lightblue";
     }
+    removeEventListener("click", bubbleSort);
 }
+
+// let canvas2 = new Canvas();
+
+// div = canvas.displayNumsOnCanvas();
+// console.log(canvas2.getDiv);
+
+const sortButton = document.getElementById("btn");
+// console.log(sortButton.textContent);
+sortButton.addEventListener("click", function() {
+    bubbleSort(canvas.getDiv.childNodes);
+}, {once : true});

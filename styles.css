@@ -27,11 +27,25 @@ html, body {
     cursor: pointer;
 }
 
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-bottom: 20px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 /* Selector options div (left of the canvas). */
 .options-selector {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     background-color: azure;
     /* height: 100%; */
@@ -54,4 +68,8 @@ html, body {
 
 .randomize-btn {
     padding-bottom: 25px;
+}
+
+.form-control {
+    text-align: center;
 }

@@ -1,5 +1,4 @@
-// const div = document.createElement("div");
-// div.className = "flex-container";
+
 
 class Canvas {
     constructor(array) {
@@ -7,10 +6,18 @@ class Canvas {
         this.MAX = 100;
         this.MIN = 5;
         this.MAX_ARR_ELEMENTS = 20;
+        this.div = null;
+    }
+
+    get getDiv() {
+        return this.div;
     }
 
     // Methods
-    createBlocksForSorting(){
+    createBlocksForSorting() {
+
+        this.nums = [];
+        
         for (let i = 0; i < this.MAX_ARR_ELEMENTS; i++) {
             let randNum = this._getRandom(this.MIN, this.MAX);
             this.nums.push(randNum);
@@ -24,7 +31,11 @@ class Canvas {
     }
 
     displayNumsOnCanvas() {
-        const div = document.querySelectorAll(".flex-container")[0];
+
+        this.div = document.querySelectorAll(".flex-container")[0];
+        canvas.createBlocksForSorting();
+
+        this.div.innerHTML = "";
 
         for (let i = 0; i < this.nums.length; i++) {
             let blockDivs = document.createElement("div");
@@ -43,16 +54,34 @@ class Canvas {
             blockDivs.style.order = i + 1;
     
             blockDivs.appendChild(text);
-            div.appendChild(blockDivs);
+            this.div.appendChild(blockDivs);
         }
+        console.log(this.div.childNodes);
+        // return div;
     }
 }
 // const div = document.querySelectorAll(".flex-container")[0];
-const sortButton = document.getElementById("btn");
-const randomizeArr = document.getElementById("rand_arr");
+// const sortButton = document.getElementById("btn");
+// const randomizeArr = document.getElementById("rand_arr");
+// randomizeArr.addEventListener("click", Canvas.displayNumsOnCanvas());
 
 const canvas = new Canvas();
-canvas.createBlocksForSorting();
+
+
+// let div = canvas.createBlocksForSorting();
+
+// const randomizeArr = document.getElementById("rand_arr");
+// randomizeArr.addEventListener("click", canvas.displayNumsOnCanvas());
+
+// console.log(canvas.getDiv);
+
+// console.log(div);
+// export {Canvas};
+// div = canvas.displayNumsOnCanvas();
+
+// const sortButton = document.getElementById("btn");
+// sortButton.addEventListener("click", bubbleSort(div));
+// canvas.createBlocksForSorting();
 // randomizeArr.addEventListener("click", canvas.displayNumsOnCanvas());
 // console.log(sortButton);
 
