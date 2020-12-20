@@ -1,20 +1,26 @@
 const BUBBLE = "bubble";
+const SWAP_COLOR = "lightcoral";
+const PRE_SWAP_COLOR = "lightblue";
+const FINAL_SWAP_COLOR = "orange";
 
+/**
+ * Bubble sort function. Returns a promise since we have 'async'.
+ * @param {*} childnodes The div child nodes to be swapped. 
+ */
 async function bubbleSort(childnodes) {
     let size = childnodes.length;
 
     let swapped;
     for (let i = 0; i < size - 1; i++)  
     { 
-        // div.childNodes[i].style.backgroundColor = "aquamarine";
         swapped = false; 
         for (let j = 0; j < size - i - 1; j++)  
         { 
             if (parseInt(childnodes[j].style.height) > parseInt(childnodes[j+1].style.height))  
             { 
 
-                childnodes[j].style.backgroundColor = "lightcoral";
-                childnodes[j+1].style.backgroundColor = "lightcoral";
+                childnodes[j].style.backgroundColor = SWAP_COLOR;
+                childnodes[j+1].style.backgroundColor = SWAP_COLOR;
 
                 let temp = childnodes[j].style.height
                 childnodes[j].style.height = childnodes[j+1].style.height; 
@@ -26,23 +32,16 @@ async function bubbleSort(childnodes) {
                 
                 let slider = document.getElementById("customRange1");
                 
-                // let rangeValue = async function () {
-                //     let lag = slider.value;
-                //     await delay(lag);
-                // }
-
-                // slider.addEventListener("input", rangeValue);
                 await delay(slider.value);
 
-                childnodes[j].style.backgroundColor = "lightblue";
-                childnodes[j+1].style.backgroundColor = "lightblue";
+                childnodes[j].style.backgroundColor = PRE_SWAP_COLOR;
+                childnodes[j+1].style.backgroundColor = PRE_SWAP_COLOR;
             
                 swapped = true; 
-                // await delay(1000);
             }
 
         } 
-        childnodes[childnodes.length - 1 - i].style.backgroundColor = "orange";
+        childnodes[childnodes.length - 1 - i].style.backgroundColor = FINAL_SWAP_COLOR;
 
         // IF no two elements were  
         // swapped by inner loop, then break 
@@ -51,7 +50,7 @@ async function bubbleSort(childnodes) {
         }
     }
     for (let i = 0; i < size; i++) {
-        childnodes[i].style.backgroundColor = "lightblue";
+        childnodes[i].style.backgroundColor = PRE_SWAP_COLOR;
     }
 
     sortButton.disabled = false;
@@ -60,7 +59,7 @@ async function bubbleSort(childnodes) {
 const sortButton = document.getElementById("btn");
 const option = document.getElementById("sorting-ctrl");
 
-
+// Perform animation when sort button is clicked.
 sortButton.addEventListener("click", function() {
 
     if (canvas.getDiv == null) return; 
