@@ -34,7 +34,7 @@ class Canvas {
     }
 
     /**
-     * 
+     * Private method to get a random number between min and max.
      * @param {number} min Lower bound for a random number.
      * @param {number} max Upper bound for a random number.
      */
