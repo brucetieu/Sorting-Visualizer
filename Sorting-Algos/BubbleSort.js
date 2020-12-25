@@ -1,16 +1,11 @@
-// const BUBBLE = "bubble";
-// const SWAP_COLOR = "lightcoral";
-// const PRE_SWAP_COLOR = "lightblue";
-// const FINAL_SWAP_COLOR = "orange";
 
-const randArrBubble = document.getElementById("rand_arr");
-
+import {sortButton, randArr} from '../Animation.js';
 /**
  * Bubble sort function. Returns a promise since we have 'async'.
  * @param {*} childnodes The div child nodes to be swapped. 
  */
 async function bubbleSort(childnodes) {
-    rand_arr.disabled = true;
+    randArr.disabled = true;
     let size = childnodes.length;
 
     let swapped;
@@ -56,21 +51,8 @@ async function bubbleSort(childnodes) {
         childnodes[i].style.backgroundColor = COLORS.PRE_SWAP_COLOR;
     }
 
-    sortButtonBubble.disabled = false;
-    randArrBubble.disabled = false;
+    sortButton.disabled = false;
+    randArr.disabled = false;
 }
 
-let sortButtonBubble = document.getElementById("btn");
-let optionBubble = document.getElementById("sorting-ctrl");
-
-// Perform animation when sort button is clicked.
-sortButtonBubble.addEventListener("click", function() {
-
-    if (canvas.getDiv == null) return; 
-
-    if (optionBubble.value == SORTING_ALGORITHM.BUBBLE_SORT) {
-        sortButtonBubble.disabled = true;
-        bubbleSort(canvas.getDiv.childNodes);
-    }
-
-});
+export {bubbleSort};

@@ -1,6 +1,6 @@
-const randArrSelection = document.getElementById("rand_arr");
+import {sortButton, randArr} from '../Animation.js';
 
-async function _swap(block1, block2, minHeight, minText, tempHeight, tempText) {
+async function _exchange(block1, block2, minHeight, minText, tempHeight, tempText) {
             
     block1.style.backgroundColor = COLORS.SWAP_COLOR;
     block2.style.backgroundColor = COLORS.MIN_ELEMENT_COLOR;
@@ -19,7 +19,7 @@ async function _swap(block1, block2, minHeight, minText, tempHeight, tempText) {
 
 }
 async function selectionSort(childnodes) {
-    randArrSelection.disabled = true;
+    randArr.disabled = true;
 
     for (let i = 0; i < childnodes.length; i++) {
 
@@ -37,29 +37,17 @@ async function selectionSort(childnodes) {
             }
         }
 
-        await _swap(childnodes[i], childnodes[minIdx], minHeight, minText, tempHeight, tempText);
+        await _exchange(childnodes[i], childnodes[minIdx], minHeight, minText, tempHeight, tempText);
         
     }
     for (let i = 0; i < childnodes.length; i++) {
         childnodes[i].style.backgroundColor = COLORS.PRE_SWAP_COLOR;
     }
 
-    sortButtonSelection.disabled = false;
-    randArrSelection.disabled = false;
+    sortButton.disabled = false;
+    randArr.disabled = false;
 
 }
 
-let sortButtonSelection = document.getElementById("btn");
-let optionSelection = document.getElementById("sorting-ctrl");
+export {selectionSort};
 
-// Perform animation when sort button is clicked.
-sortButtonSelection.addEventListener("click", function() {
-
-    if (canvas.getDiv == null) return; 
-
-    if (optionSelection.value == SORTING_ALGORITHM.SELECTION_SORT) {
-        sortButtonSelection.disabled = true;
-        selectionSort(canvas.getDiv.childNodes);
-    }
-
-});
