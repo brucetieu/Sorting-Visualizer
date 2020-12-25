@@ -3,6 +3,7 @@
 import {bubbleSort} from './Sorting-Algos/BubbleSort.js';
 import {insertionSort} from './Sorting-Algos/InsertionSort.js';
 import {selectionSort} from './Sorting-Algos/SelectionSort.js';
+import {shellSort} from './Sorting-Algos/ShellSort.js';
 
 var sortButton = document.getElementById("btn");
 var options = document.getElementById("sorting-ctrl");
@@ -17,13 +18,17 @@ sortButton.addEventListener("click", function() {
         sortButton.disabled = true;
         bubbleSort(canvas.getDiv.childNodes);
     }
-    else if (options.value == SORTING_ALGORITHM.INSERTION_SORT) {
+    if (options.value == SORTING_ALGORITHM.INSERTION_SORT) {
         sortButton.disabled = true;
         insertionSort(canvas.getDiv.childNodes);
     }
-    else if (options.value == SORTING_ALGORITHM.SELECTION_SORT) {
+    if (options.value == SORTING_ALGORITHM.SELECTION_SORT) {
         sortButton.disabled = true;
         selectionSort(canvas.getDiv.childNodes);
+    }
+    if (options.value == SORTING_ALGORITHM.SHELLSORT) {
+        sortButton.disabled = true;
+        shellSort(canvas.getDiv.childNodes);
     }
 
 });
