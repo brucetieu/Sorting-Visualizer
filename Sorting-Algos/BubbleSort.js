@@ -1,7 +1,7 @@
-const BUBBLE = "bubble";
-const SWAP_COLOR = "lightcoral";
-const PRE_SWAP_COLOR = "lightblue";
-const FINAL_SWAP_COLOR = "orange";
+// const BUBBLE = "bubble";
+// const SWAP_COLOR = "lightcoral";
+// const PRE_SWAP_COLOR = "lightblue";
+// const FINAL_SWAP_COLOR = "orange";
 
 const randArrBubble = document.getElementById("rand_arr");
 
@@ -22,8 +22,8 @@ async function bubbleSort(childnodes) {
             if (parseInt(childnodes[j].style.height) > parseInt(childnodes[j+1].style.height))  
             { 
 
-                childnodes[j].style.backgroundColor = SWAP_COLOR;
-                childnodes[j+1].style.backgroundColor = SWAP_COLOR;
+                childnodes[j].style.backgroundColor = COLORS.SWAP_COLOR;
+                childnodes[j+1].style.backgroundColor = COLORS.SWAP_COLOR;
 
                 let temp = childnodes[j].style.height
                 childnodes[j].style.height = childnodes[j+1].style.height; 
@@ -37,14 +37,14 @@ async function bubbleSort(childnodes) {
                 
                 await delay(slider.value);
 
-                childnodes[j].style.backgroundColor = PRE_SWAP_COLOR;
-                childnodes[j+1].style.backgroundColor = PRE_SWAP_COLOR;
+                childnodes[j].style.backgroundColor = COLORS.PRE_SWAP_COLOR;
+                childnodes[j+1].style.backgroundColor = COLORS.PRE_SWAP_COLOR;
             
                 swapped = true; 
             }
 
         } 
-        childnodes[childnodes.length - 1 - i].style.backgroundColor = FINAL_SWAP_COLOR;
+        childnodes[childnodes.length - 1 - i].style.backgroundColor = COLORS.FINAL_SWAP_COLOR;
 
         // IF no two elements were  
         // swapped by inner loop, then break 
@@ -53,7 +53,7 @@ async function bubbleSort(childnodes) {
         }
     }
     for (let i = 0; i < size; i++) {
-        childnodes[i].style.backgroundColor = PRE_SWAP_COLOR;
+        childnodes[i].style.backgroundColor = COLORS.PRE_SWAP_COLOR;
     }
 
     sortButtonBubble.disabled = false;
@@ -68,7 +68,7 @@ sortButtonBubble.addEventListener("click", function() {
 
     if (canvas.getDiv == null) return; 
 
-    if (optionBubble.value == BUBBLE) {
+    if (optionBubble.value == SORTING_ALGORITHM.BUBBLE_SORT) {
         sortButtonBubble.disabled = true;
         bubbleSort(canvas.getDiv.childNodes);
     }
