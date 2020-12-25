@@ -2,8 +2,8 @@ const randArrSelection = document.getElementById("rand_arr");
 
 async function _swap(block1, block2, minHeight, minText, tempHeight, tempText) {
             
-    block1.style.backgroundColor = SWAP_COLOR;
-    block2.style.backgroundColor = "lightgreen";
+    block1.style.backgroundColor = COLORS.SWAP_COLOR;
+    block2.style.backgroundColor = COLORS.MIN_ELEMENT_COLOR;
 
     let sliderSelection = document.getElementById("customRange1");
     await delay(sliderSelection.value);
@@ -14,8 +14,8 @@ async function _swap(block1, block2, minHeight, minText, tempHeight, tempText) {
     block2.style.height = tempHeight;
     block2.textContent = tempText;
 
-    block2.style.backgroundColor = PRE_SWAP_COLOR;
-    block1.style.backgroundColor = "orange";
+    block2.style.backgroundColor = COLORS.PRE_SWAP_COLOR;
+    block1.style.backgroundColor = COLORS.FINAL_SWAP_COLOR;
 
 }
 async function selectionSort(childnodes) {
@@ -23,8 +23,8 @@ async function selectionSort(childnodes) {
 
     for (let i = 0; i < childnodes.length; i++) {
 
-        let minHeight = "10000px";
-        let minText = "10000px";
+        let minHeight = HEIGHTS.MIN_HEIGHT;
+        let minText = HEIGHTS.MIN_TEXT;
         let minIdx = 0;
         let tempHeight = childnodes[i].style.height;
         let tempText = childnodes[i].textContent;
@@ -39,24 +39,9 @@ async function selectionSort(childnodes) {
 
         await _swap(childnodes[i], childnodes[minIdx], minHeight, minText, tempHeight, tempText);
         
-        // childnodes[i].style.backgroundColor = SWAP_COLOR;
-        // childnodes[minIdx].style.backgroundColor = "lightgreen";
-
-        // let sliderSelection = document.getElementById("customRange1");
-        // await delay(sliderSelection.value);
-
-        // childnodes[i].style.height = minHeight;
-        // childnodes[i].textContent = minText;
-
-        // childnodes[minIdx].style.height = tempHeight;
-        // childnodes[minIdx].textContent = tempText;
-
-        // childnodes[minIdx].style.backgroundColor = PRE_SWAP_COLOR;
-        // childnodes[i].style.backgroundColor = "orange";
-        
     }
     for (let i = 0; i < childnodes.length; i++) {
-        childnodes[i].style.backgroundColor = PRE_SWAP_COLOR;
+        childnodes[i].style.backgroundColor = COLORS.PRE_SWAP_COLOR;
     }
 
     sortButtonSelection.disabled = false;
@@ -72,7 +57,7 @@ sortButtonSelection.addEventListener("click", function() {
 
     if (canvas.getDiv == null) return; 
 
-    if (optionSelection.value == "selection") {
+    if (optionSelection.value == SORTING_ALGORITHM.SELECTION_SORT) {
         sortButtonSelection.disabled = true;
         selectionSort(canvas.getDiv.childNodes);
     }
