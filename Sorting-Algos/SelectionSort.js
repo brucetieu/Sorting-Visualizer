@@ -1,4 +1,4 @@
-import {sortButton, randArr} from '../Animation.js';
+import {sortButton, randArr} from '../Animation/Animation.js';
 
 async function _exchangeWithMin(block1, block2, minHeight, minText, tempHeight, tempText) {
             

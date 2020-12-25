@@ -1,4 +1,4 @@
-import {sortButton, randArr} from '../Animation.js';
+import {sortButton, randArr} from '../Animation/Animation.js';
 import {swap} from './Swap.js';
 
 // Source: Algorithms 4th Edition - Sedgewick

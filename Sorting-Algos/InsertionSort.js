@@ -1,5 +1,5 @@
-import {sortButton, randArr} from '../Animation.js';
-import {swap} from './Swap.js';
+import {sortButton, randArr} from '../Animation/Animation.js';
+import {swap} from './Swap.js'
 
 async function insertionSort(childnodes) {
     randArr.disabled = true;

@@ -1,9 +1,10 @@
 // Import all sorting functions here.
 
-import {bubbleSort} from './Sorting-Algos/BubbleSort.js';
-import {insertionSort} from './Sorting-Algos/InsertionSort.js';
-import {selectionSort} from './Sorting-Algos/SelectionSort.js';
-import {shellSort} from './Sorting-Algos/ShellSort.js';
+import {bubbleSort} from '../Sorting-Algos/BubbleSort.js'
+import {insertionSort} from '../Sorting-Algos/InsertionSort.js';
+import {selectionSort} from '../Sorting-Algos/SelectionSort.js';
+import {shellSort} from '../Sorting-Algos/ShellSort.js';
+
 
 var sortButton = document.getElementById("btn");
 var options = document.getElementById("sorting-ctrl");

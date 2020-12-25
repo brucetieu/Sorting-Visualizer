@@ -1,5 +1,5 @@
 
-import {sortButton, randArr} from '../Animation.js';
+import {sortButton, randArr} from '../Animation/Animation.js';
 import {swap} from './Swap.js';
 /**
  * Bubble sort function. Returns a promise since we have 'async'.
