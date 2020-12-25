@@ -8,7 +8,7 @@ var COLORS = {
     SWAP_COLOR: "lightcoral",
     PRE_SWAP_COLOR: "lightblue",
     FINAL_SWAP_COLOR: "orange",
-    MIN_ELEMENT_COLOR: "lightgreen"
+    COMPARE_COLOR: "lightgreen"
 };
 
 var HEIGHTS = {
