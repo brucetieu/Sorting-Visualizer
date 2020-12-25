@@ -1,9 +1,9 @@
 import {sortButton, randArr} from '../Animation.js';
 
-async function _exchange(block1, block2, minHeight, minText, tempHeight, tempText) {
+async function _exchangeWithMin(block1, block2, minHeight, minText, tempHeight, tempText) {
             
     block1.style.backgroundColor = COLORS.SWAP_COLOR;
-    block2.style.backgroundColor = COLORS.MIN_ELEMENT_COLOR;
+    block2.style.backgroundColor = COLORS.COMPARE_COLOR;
 
     let sliderSelection = document.getElementById("customRange1");
     await delay(sliderSelection.value);
@@ -37,7 +37,7 @@ async function selectionSort(childnodes) {
             }
         }
 
-        await _exchange(childnodes[i], childnodes[minIdx], minHeight, minText, tempHeight, tempText);
+        await _exchangeWithMin(childnodes[i], childnodes[minIdx], minHeight, minText, tempHeight, tempText);
         
     }
     for (let i = 0; i < childnodes.length; i++) {
