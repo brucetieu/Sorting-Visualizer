@@ -7,7 +7,7 @@ class Canvas {
         this.nums = [];
         this.MAX = 100;
         this.MIN = 5;
-        this.MAX_ARR_ELEMENTS = 30;
+        this.MAX_ARR_ELEMENTS = 35;
         this.div = null;
     }
 
@@ -60,7 +60,7 @@ class Canvas {
             blockDivs.style.width = "23px";
             blockDivs.style.height = (this.nums[i] * 6) + "px"; 
             blockDivs.style.backgroundColor = "lightblue";
-            blockDivs.style.marginRight = "10px";
+            blockDivs.style.marginRight = "5px";
             blockDivs.style.textAlign = "center";
             blockDivs.style.fontSize = "small";
             blockDivs.style.order = i + 1;
