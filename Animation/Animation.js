@@ -4,6 +4,7 @@ import {bubbleSort} from '../Sorting-Algos/BubbleSort.js'
 import {insertionSort} from '../Sorting-Algos/InsertionSort.js';
 import {selectionSort} from '../Sorting-Algos/SelectionSort.js';
 import {shellSort} from '../Sorting-Algos/ShellSort.js';
+import {quickSort} from '../Sorting-Algos/QuickSort.js';
 
 
 var sortButton = document.getElementById("btn");
@@ -30,6 +31,10 @@ sortButton.addEventListener("click", function() {
     if (options.value == SORTING_ALGORITHM.SHELLSORT) {
         sortButton.disabled = true;
         shellSort(canvas.getDiv.childNodes);
+    }
+    if (options.value == SORTING_ALGORITHM.QUICKSORT) {
+        // sortButton.disabled = true;
+        quickSort(canvas.getDiv.childNodes);
     }
 
 });

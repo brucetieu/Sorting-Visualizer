@@ -2,7 +2,8 @@ var SORTING_ALGORITHM = {
     BUBBLE_SORT: "bubble_sort",
     INSERTION_SORT: "insertion_sort",
     SELECTION_SORT: "selection_sort",
-    SHELLSORT: "shellsort"
+    SHELLSORT: "shellsort",
+    QUICKSORT: "quicksort"
 };
 
 var COLORS = {

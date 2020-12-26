@@ -17,7 +17,6 @@ async function shellSort(childnodes) {
     while (h >= 1) {
         for (let i = h; i < N; i++) {
             for (let j = i; j >= h && parseInt(childnodes[j].style.height) < parseInt(childnodes[j-h].style.height); j -= h) {
-                console.log(i, j, h);
                 await swap(childnodes[j], childnodes[j-h]);
             }
         }
