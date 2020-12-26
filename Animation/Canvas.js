@@ -7,7 +7,7 @@ class Canvas {
         this.nums = [];
         this.MAX = 100;
         this.MIN = 5;
-        this.MAX_ARR_ELEMENTS = 20;
+        this.MAX_ARR_ELEMENTS = 30;
         this.div = null;
     }
 
@@ -57,11 +57,8 @@ class Canvas {
             let text = document.createTextNode(this.nums[i]);
     
             blockDivs.className = "block" + i;
-    
-            blockDivs.style.width = "35px";
-    
+            blockDivs.style.width = "23px";
             blockDivs.style.height = (this.nums[i] * 6) + "px"; 
-            
             blockDivs.style.backgroundColor = "lightblue";
             blockDivs.style.marginRight = "10px";
             blockDivs.style.textAlign = "center";
@@ -71,8 +68,6 @@ class Canvas {
             blockDivs.appendChild(text);
             this.div.appendChild(blockDivs);
         }
-        console.log(this.div.childNodes);
-        // return div;
     }
 }
 
