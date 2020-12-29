@@ -18,4 +18,18 @@ async function swap(block1, block2) {
     block2.style.backgroundColor = COLORS.PRE_SWAP_COLOR;
 }
 
-export {swap};
+function isSorted(arr) {
+    for (let i = 0; i < arr.length - 1; i++) {
+        console.log(arr);
+        if (!(parseInt(arr[i].style.height) <= parseInt(arr[i+1].style.height))) {
+            return false;
+        }
+    }
+
+    for (let j = 0; j < arr.length; j++) {
+        arr[j].style.backgroundColor = COLORS.PRE_SWAP_COLOR;
+    }
+
+    return true;
+}
+export {swap, isSorted};
