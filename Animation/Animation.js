@@ -5,14 +5,15 @@ import {insertionSort} from '../Sorting-Algos/InsertionSort.js';
 import {selectionSort} from '../Sorting-Algos/SelectionSort.js';
 import {shellSort} from '../Sorting-Algos/ShellSort.js';
 import {quickSort} from '../Sorting-Algos/QuickSort.js';
-
+import {mergeSort} from '../Sorting-Algos/MergeSort.js';
+import {isSorted} from '../Sorting-Algos/Swap.js';
 
 var sortButton = document.getElementById("btn");
 var options = document.getElementById("sorting-ctrl");
 var randArr = document.getElementById("rand_arr");
 
 // Perform animation when sort button is clicked.
-sortButton.addEventListener("click", function() {
+sortButton.addEventListener("click", async function() {
 
     if (canvas.getDiv == null) return; 
 
@@ -33,8 +34,25 @@ sortButton.addEventListener("click", function() {
         shellSort(canvas.getDiv.childNodes);
     }
     if (options.value == SORTING_ALGORITHM.QUICKSORT) {
-        // sortButton.disabled = true;
         quickSort(canvas.getDiv.childNodes);
+    }
+    if (options.value == SORTING_ALGORITHM.MERGESORT) {
+
+        let len = canvas.getDiv.childNodes.length;
+        let aux = Array.apply(null, Array(len));
+
+        sortButton.disabled = true;
+        randArr.disabled = true;
+
+        let result = await mergeSort(canvas.getDiv.childNodes, aux, 0, len - 1);
+        
+        console.log(isSorted(result))
+        
+        if (isSorted(result)) {
+            sortButton.disabled = false;
+            randArr.disabled = false;
+        }
+     
     }
 
 });

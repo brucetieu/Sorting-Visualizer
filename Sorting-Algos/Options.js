@@ -3,7 +3,8 @@ var SORTING_ALGORITHM = {
     INSERTION_SORT: "insertion_sort",
     SELECTION_SORT: "selection_sort",
     SHELLSORT: "shellsort",
-    QUICKSORT: "quicksort"
+    QUICKSORT: "quicksort",
+    MERGESORT: "mergesort"
 };
 
 var COLORS = {
