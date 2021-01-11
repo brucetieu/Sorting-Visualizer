@@ -3,7 +3,7 @@ import {sortButton, randArr} from '../Animation/Animation.js';
 import {swap} from './Swap.js';
 /**
  * Bubble sort function. Returns a promise since we have 'async'.
- * @param {*} childnodes The div child nodes to be swapped. 
+ * @param {Array} childnodes The div child nodes to be swapped. 
  */
 async function bubbleSort(childnodes) {
     randArr.disabled = true;

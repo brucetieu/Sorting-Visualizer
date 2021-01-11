@@ -4,7 +4,7 @@ import {swap} from './Swap.js';
 // Source: Algorithms 4th Edition - Sedgewick
 /**
  * Perform the shellsort algorithm.
- * @param {object} childnodes The array of nodes.
+ * @param {Array} childnodes The array of nodes.
  */
 async function shellSort(childnodes) {
     randArr.disabled = true;

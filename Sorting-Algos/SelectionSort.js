@@ -1,5 +1,14 @@
 import {sortButton, randArr} from '../Animation/Animation.js';
 
+/**
+ * Exchange node with the smallest element.
+ * @param {object} block1 The first div object with height and text properties.
+ * @param {object} block2 The second div object with height and text properties.
+ * @param {number} minHeight The smallest height.
+ * @param {string} minText The smallest height in text.
+ * @param {number} tempHeight Temporary height for swapping.
+ * @param {string} tempText Temporary text for swapping.
+ */
 async function _exchangeWithMin(block1, block2, minHeight, minText, tempHeight, tempText) {
             
     block1.style.backgroundColor = COLORS.SWAP_COLOR;
@@ -18,6 +27,11 @@ async function _exchangeWithMin(block1, block2, minHeight, minText, tempHeight, 
     block1.style.backgroundColor = COLORS.FINAL_SWAP_COLOR;
 
 }
+
+/**
+ * Perform selection sort.
+ * @param {object} childnodes The array of objects. 
+ */
 async function selectionSort(childnodes) {
     randArr.disabled = true;
 

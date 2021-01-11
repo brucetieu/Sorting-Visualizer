@@ -28,7 +28,7 @@ async function swap(block1, block2) {
 
 /**
  * Check if an array is sorted in ascending order.
- * @param {array} arr The resultant array.
+ * @param {Array} arr The resultant array.
  */
 function isSorted(arr) {
   for (let i = 0; i < arr.length - 1; i++) {

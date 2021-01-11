@@ -7,7 +7,7 @@ import { swap } from "./Swap.js";
 
 /**
  * Quick sort function.
- * @param {object} childNodes The childnodes to be sorted.
+ * @param {Array} childNodes The childnodes to be sorted.
  */
 async function quickSort(childNodes) {
 
@@ -17,7 +17,7 @@ async function quickSort(childNodes) {
 
 /**
  * Partition the array and find the pivots for each partition.
- * @param {object} arr The full array of nodes.
+ * @param {Array} arr The full array of nodes.
  * @param {number} l The left bound of the array (0).
  * @param {number} r The right bound of the array.
  */
@@ -41,7 +41,7 @@ async function _qs(arr, l, r) {
 
 /**
  * Parition the array and find the new pivot.
- * @param {object} arr The array of nodes.
+ * @param {Array} arr The array of nodes.
  * @param {number} l Lower bound of array.
  * @param {number} r Upper bound of the array.
  */
