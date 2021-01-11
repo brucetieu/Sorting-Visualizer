@@ -5,7 +5,6 @@ import {swap} from './Swap.js';
 function locateMaxChild(childNodes, index) {
     let leftChild = (2 * index) + 1;
     let rightChild = (2 * index) + 2;
-    
 
     if (leftChild < childNodes.length && rightChild < childNodes.length) {
         if (parseInt(childNodes[leftChild].style.height) < parseInt(childNodes[rightChild].style.height)) {
@@ -19,10 +18,9 @@ function locateMaxChild(childNodes, index) {
 }
 
 async function trickle_down(childNodes, index, N) {
-    console.log(N);
+
     while ((2 * index) + 1 < N) {
         let maxChild = locateMaxChild(childNodes, index);
-        console.log(maxChild);
 
         if (parseInt(childNodes[index].style.height) < parseInt(childNodes[maxChild].style.height)) {
             await swap(childNodes[index], childNodes[maxChild]);
@@ -30,16 +28,14 @@ async function trickle_down(childNodes, index, N) {
         index = maxChild;
     }
 
-    // return childNodes;
-
 }
 
 async function heapSort(childNodes, index) {
     let N = index;
 
-
     // Heapify
     for (let i = Math.floor(N / 2); i >= 0; i--) {
+        console.log(i);
         await trickle_down(childNodes, i, N);
     }
 
@@ -47,7 +43,7 @@ async function heapSort(childNodes, index) {
     while (N >= 0) {
         await swap(childNodes[0], childNodes[N]);
         N--;
-        await trickle_down(0, N);
+        await trickle_down(childNodes, 0, N);
     }
 }
 
