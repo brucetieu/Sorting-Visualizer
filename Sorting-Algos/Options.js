@@ -8,7 +8,8 @@ var SORTING_ALGORITHM = {
     SELECTION_SORT: "selection_sort",
     SHELLSORT: "shellsort",
     QUICKSORT: "quicksort",
-    MERGESORT: "mergesort"
+    MERGESORT: "mergesort",
+    HEAPSORT: "heapsort"
 };
 
 /**

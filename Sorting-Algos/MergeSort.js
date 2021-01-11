@@ -32,12 +32,12 @@ async function mergeSort(childnodes, aux, lo, hi) {
  */
 async function merge(childnodes, aux, lo, mid, hi) {
 
+  let slider = document.getElementById("customRange1");
+  
   // Copy elements from the original array into the aux array. We are concerned with the height and textcontent of the divs, stored as a list of lists.
   for (let k = lo; k <= hi; k++) {
     aux[k] = [childnodes[k].style.height, childnodes[k].textContent];
   }
-
-  let slider = document.getElementById("customRange1");
 
   let i = lo;
   let j = mid + 1;

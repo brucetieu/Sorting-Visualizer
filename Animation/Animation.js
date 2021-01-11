@@ -5,6 +5,7 @@ import { selectionSort } from "../Sorting-Algos/SelectionSort.js";
 import { shellSort } from "../Sorting-Algos/ShellSort.js";
 import { quickSort } from "../Sorting-Algos/QuickSort.js";
 import { mergeSort } from "../Sorting-Algos/MergeSort.js";
+import { heapSort } from "../Sorting-Algos/HeapSort.js";
 import { isSorted } from "../Sorting-Algos/Swap.js";
 
 /* Query Selectors */
@@ -54,6 +55,10 @@ sortButton.addEventListener("click", async function () {
       sortButton.disabled = false;
       randArr.disabled = false;
     }
+  }
+  if (options.value == SORTING_ALGORITHM.HEAPSORT) {
+    let len = canvas.getDiv.childNodes.length - 1;
+    heapSort(canvas.getDiv.childNodes, len);
   }
 });
 
