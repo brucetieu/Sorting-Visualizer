@@ -5,6 +5,7 @@ import { selectionSort } from "../Sorting-Algos/SelectionSort.js";
 import { shellSort } from "../Sorting-Algos/ShellSort.js";
 import { quickSort } from "../Sorting-Algos/QuickSort.js";
 import { mergeSort } from "../Sorting-Algos/MergeSort.js";
+import { heapSort } from "../Sorting-Algos/HeapSort.js";
 import { isSorted } from "../Sorting-Algos/Swap.js";
 
 /* Query Selectors */
@@ -14,31 +15,34 @@ var randArr = document.getElementById("rand_arr");
 
 /* Perform animation when sort button is clicked. */
 sortButton.addEventListener("click", async function () {
+
+  var childNodes = canvas.getDiv.childNodes;
+  var len = childNodes.length;
+
   // If there's nothing in the page and user clicks the button, do nothing.
   if (canvas.getDiv == null) return;
 
   /* Perform the visualization based on what is chosen from the dropdown. */
   if (options.value == SORTING_ALGORITHM.BUBBLE_SORT) {
     sortButton.disabled = true;
-    bubbleSort(canvas.getDiv.childNodes);
+    bubbleSort(childNodes);
   }
   if (options.value == SORTING_ALGORITHM.INSERTION_SORT) {
     sortButton.disabled = true;
-    insertionSort(canvas.getDiv.childNodes);
+    insertionSort(childNodes);
   }
   if (options.value == SORTING_ALGORITHM.SELECTION_SORT) {
     sortButton.disabled = true;
-    selectionSort(canvas.getDiv.childNodes);
+    selectionSort(childNodes);
   }
   if (options.value == SORTING_ALGORITHM.SHELLSORT) {
     sortButton.disabled = true;
-    shellSort(canvas.getDiv.childNodes);
+    shellSort(childNodes);
   }
   if (options.value == SORTING_ALGORITHM.QUICKSORT) {
-    quickSort(canvas.getDiv.childNodes);
+    quickSort(childNodes);
   }
   if (options.value == SORTING_ALGORITHM.MERGESORT) {
-    let len = canvas.getDiv.childNodes.length;
 
     // Create the auxilary array to store a copy of the child nodes.
     let aux = Array.apply(null, Array(len));
@@ -54,6 +58,9 @@ sortButton.addEventListener("click", async function () {
       sortButton.disabled = false;
       randArr.disabled = false;
     }
+  }
+  if (options.value == SORTING_ALGORITHM.HEAPSORT) {
+    heapSort(canvas.getDiv.childNodes, len - 1);
   }
 });
 

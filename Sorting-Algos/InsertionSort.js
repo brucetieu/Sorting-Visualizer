@@ -1,6 +1,10 @@
 import {sortButton, randArr} from '../Animation/Animation.js';
 import {swap} from './Swap.js'
 
+/**
+ * Perform insertion sort.
+ * @param {Array} childnodes The array of divs.
+ */
 async function insertionSort(childnodes) {
     randArr.disabled = true;
     for (let i = 1; i < childnodes.length; i++) {

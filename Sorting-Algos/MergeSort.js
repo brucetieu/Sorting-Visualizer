@@ -2,8 +2,8 @@ import { sortButton, randArr } from "../Animation/Animation.js";
 
 /**
  * Perform merge sort.
- * @param {object} childnodes The array of object nodes.
- * @param {object} aux The auxilary array for storing the sorted arrays.
+ * @param {Array} childnodes The array of object nodes.
+ * @param {Array} aux The auxilary array for storing the sorted arrays.
  * @param {number} lo Lower bound of array.
  * @param {number} hi Upper bound of array.
  */
@@ -24,20 +24,20 @@ async function mergeSort(childnodes, aux, lo, hi) {
 
 /**
  * Merge sorted sub arrays together.
- * @param {*} childnodes The array of object nodes.
- * @param {*} aux The auxilary array for storing the sorted from merging.
- * @param {*} lo The lower bound of array.
- * @param {*} mid The middle element of the array.
- * @param {*} hi The upper bound element of array.
+ * @param {Array} childnodes The array of object nodes.
+ * @param {Array} aux The auxilary array for storing the sorted from merging.
+ * @param {number} lo The lower bound of array.
+ * @param {number} mid The middle element of the array.
+ * @param {number} hi The upper bound element of array.
  */
 async function merge(childnodes, aux, lo, mid, hi) {
 
+  let slider = document.getElementById("customRange1");
+  
   // Copy elements from the original array into the aux array. We are concerned with the height and textcontent of the divs, stored as a list of lists.
   for (let k = lo; k <= hi; k++) {
     aux[k] = [childnodes[k].style.height, childnodes[k].textContent];
   }
-
-  let slider = document.getElementById("customRange1");
 
   let i = lo;
   let j = mid + 1;
