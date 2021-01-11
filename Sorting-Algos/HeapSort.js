@@ -31,20 +31,30 @@ async function trickle_down(childNodes, index, N) {
 }
 
 async function heapSort(childNodes, index) {
+    randArr.disabled = true;
+    sortButton.disabled = true;
+
     let N = index;
 
     // Heapify
     for (let i = Math.floor(N / 2); i >= 0; i--) {
-        console.log(i);
         await trickle_down(childNodes, i, N);
     }
 
     // Heap sort
     while (N >= 0) {
         await swap(childNodes[0], childNodes[N]);
+        childNodes[N].style.backgroundColor = COLORS.FINAL_SWAP_COLOR;
         N--;
         await trickle_down(childNodes, 0, N);
     }
+
+    for (let i = 0; i <= index; i++) {
+        childNodes[i].style.backgroundColor = COLORS.PRE_SWAP_COLOR;
+    }
+
+    randArr.disabled = false;
+    sortButton.disabled = false;
 }
 
 
